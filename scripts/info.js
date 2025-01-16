@@ -87,29 +87,7 @@ const app = initializeApp(firebaseConfig);
 const db = getFirestore(app);
 const auth = getAuth(app);
 
-onAuthStateChanged(auth, async (user) => {
-    if (user) {
-        console.log("Usuário autenticado com UID: ", user.uid);
-        try {
-            const userDocRef = doc(db, "usuarios", user.uid);
-            const userDoc = await getDoc(userDocRef);
-            
-            console.log("Buscando documento do usuário com UID:", user.uid); // Log para depuração
-            
-            if (userDoc.exists()) {
-                const userData = userDoc.data();
-                document.getElementById("user-name").textContent = userData.nome;
-            } else {
-                console.log("Documento do usuário não encontrado.");
-            }
-        } catch (error) {
-            console.log("Erro ao buscar o documento: ", error);
-        }
-    } else {
-        console.log("Usuário não autenticado.");
-        window.location.href = "login.html"; 
-    }
-});
+
 
 const toggleDarkModeBtn = document.getElementById('toggle-dark-mode');
 const logo = document.getElementById('logo');

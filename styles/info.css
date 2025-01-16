@@ -219,8 +219,8 @@ body {
   background-position: center;
   background-size: cover;
   background-repeat: no-repeat;
-  height: 100vh; /* A altura da seção parallax ocupa toda a tela */
-  overflow: hidden; /* Previne overflow no cabeçalho */
+  height: 100vh; 
+  overflow: hidden; 
 }
 
 .sample-header::before {
