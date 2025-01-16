@@ -1,7 +1,16 @@
+
 // Referências dos elementos
 const signInForm = document.getElementById("sign-in-form");
+const signUpForm = document.getElementById("sign-up-form");
+const signUpBtn = document.getElementById("sign-up-btn");
 const signInBtn = document.getElementById("sign-in-btn");
 const toggleButton = document.getElementById("toggle-dark-mode");
+const userNameElement = document.getElementById('user-name'); // Referência ao elemento
+
+// Alternar entre login e cadastro
+signUpBtn.addEventListener('click', () => {
+    document.querySelector(".container").classList.add("sign-up-mode");
+});
 
 // Alternar entre modo claro e modo escuro
 toggleButton.addEventListener("click", () => {
